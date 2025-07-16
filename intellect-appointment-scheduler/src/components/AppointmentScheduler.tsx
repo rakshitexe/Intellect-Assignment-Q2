@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSlots } from '../hooks/useSlots';
 import type { Slot } from '../types/Slot';
-import DateSelector from './DateSelector';
-import { SlotSelector } from './SlotSelector';
+import DateSelector from './baseline-ui/DateSelector';
+import { SlotSelector } from './baseline-ui/SlotSelector';
 
 interface AppointmentSchedulerProps {
   onSlotSelect?: (slot: Slot) => void;

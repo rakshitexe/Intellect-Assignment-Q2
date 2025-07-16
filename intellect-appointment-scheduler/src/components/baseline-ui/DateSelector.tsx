@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import React, { useRef, useState, useEffect } from "react";
-import SelectableCard from "./baseline-ui/SelectableCard"; // Adjust path as needed
+import SelectableCard from "./SelectableCard"; // Adjust path as needed
 interface Props {
   dates: string[];
   selectedDate: string;

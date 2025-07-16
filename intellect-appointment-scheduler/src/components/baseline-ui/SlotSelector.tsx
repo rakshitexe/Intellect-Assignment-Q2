@@ -1,5 +1,5 @@
-import type { Slot } from "../types/Slot";
-import SelectableCard from "./baseline-ui/SelectableCard";
+import type { Slot } from "../../types/Slot";
+import SelectableCard from "./SelectableCard";
 
 interface Props {
   slots: Slot[];
