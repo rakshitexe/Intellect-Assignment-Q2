@@ -10,8 +10,7 @@ Designed as a self-contained UI widget with clean styling and robust unit test c
 
 ## 🚀 Live Demo
 
-🔗 [Live Demo on Vercel](https://your-vercel-demo-url.com)  
-_(Replace the above URL with the actual deployed link if available)_
+🔗 [Live Demo on Vercel](https://intellect-assignment-q2-rakshit.vercel.app/)  
 
 ---
 
