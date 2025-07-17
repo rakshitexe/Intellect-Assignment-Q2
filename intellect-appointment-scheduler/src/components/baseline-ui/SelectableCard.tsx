@@ -17,9 +17,8 @@ const SelectableCard: React.FC<SelectableCardProps> = ({
   const baseStyle = `transition-all rounded-lg border text-[12px] text-center shadow-sm`;
 
   // Style for selected vs default states
-  const selectedStyle = `bg-[#e7e7e7] text-black font-semibold border-gray-400`;
-  const defaultStyle = `bg-white text-gray-800 border-gray-300 hover:border-gray-400 hover:bg-gray-100`;
-
+  const selectedStyle = `bg-[#eaeff3] text-black border-[#c8cdd1]`;
+  const defaultStyle = `bg-white text-gray-800 border-[#d9dadb] hover:border-gray-400 hover:bg-gray-100`;
   // Combine final className
   const classes = `${baseStyle} ${isSelected ? selectedStyle : defaultStyle}`;
 

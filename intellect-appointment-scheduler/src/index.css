@@ -82,7 +82,7 @@
 
 /* Scrollbar thumb (the draggable bar) */
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #e7e7e7;
+  background-color: #e3eaf0;
   border-radius: 8px;
   border: 2px solid transparent;
   background-clip: content-box;
@@ -91,5 +91,5 @@
 /* Firefox scrollbar styling */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #e7e7e7 transparent;
+  scrollbar-color: #e3eaf0 transparent;
 }

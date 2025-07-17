@@ -59,7 +59,7 @@ describe("SlotSelector", () => {
 
     const selectedButton = screen.getByText(selected.displayTime);
 
-    expect(selectedButton).toHaveClass("bg-[#e7e7e7]");
+    expect(selectedButton).toHaveClass("bg-[#eaeff3]");
     expect(selectedButton).toHaveClass("text-black");
   });
 
@@ -102,7 +102,7 @@ describe("SlotSelector", () => {
     );
 
     // Initially selected is first slot
-    expect(screen.getByText(mockSlots[0].displayTime)).toHaveClass("bg-[#e7e7e7]");
+    expect(screen.getByText(mockSlots[0].displayTime)).toHaveClass("bg-[#eaeff3]");
 
     // User selects second slot
     fireEvent.click(screen.getByText(mockSlots[1].displayTime));
@@ -117,7 +117,7 @@ describe("SlotSelector", () => {
       />
     );
 
-    expect(screen.getByText(mockSlots[1].displayTime)).toHaveClass("bg-[#e7e7e7]");
+    expect(screen.getByText(mockSlots[1].displayTime)).toHaveClass("bg-[#eaeff3]");
   });
 
   test("does not crash when selecting already selected slot", () => {

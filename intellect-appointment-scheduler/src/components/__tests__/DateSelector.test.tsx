@@ -106,7 +106,7 @@ describe("DateSelector Component", () => {
     const day = selectedDate.getDate().toString().padStart(2, "0");
 
     const selectedCard = screen.getByText(day).parentElement;
-    expect(selectedCard?.className).toContain("border-gray-400");
+    expect(selectedCard?.className).toContain("border-[#c8cdd1]");
   });
 
   // Ensure component handles empty date list gracefully

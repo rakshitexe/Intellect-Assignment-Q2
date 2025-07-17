@@ -20,7 +20,7 @@ export const SlotSelector = ({ slots, selectedSlot, onSelect }: Props) => {
 
       {/* Show message if no slots are available */}
       {slots.length === 0 ? (
-        <p className="text-gray-500 italic">No available time slots.</p>
+        <p className="text-gray-500 text-center">No available time slots.</p>
       ) : (
         // Render each slot as a selectable card
         <div className="flex flex-wrap gap-2">
