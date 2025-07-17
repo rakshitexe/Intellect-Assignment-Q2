@@ -16,7 +16,7 @@ export const useSlots = () => {
     return groupSlotsByDate(query.data);
   }, [query.data]);
 
-  const availableDates = Object.keys(groupedSlots);
+  const availableDates = useMemo(() => Object.keys(groupedSlots), [groupedSlots]);
 
   return {
     ...query,

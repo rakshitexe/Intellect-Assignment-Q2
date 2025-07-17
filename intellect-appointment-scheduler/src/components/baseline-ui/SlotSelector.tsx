@@ -17,20 +17,24 @@ export const SlotSelector = ({ slots, selectedSlot, onSelect }: Props) => {
         Each session lasts for 30 minutes
       </p>
 
-      <div className="flex flex-wrap gap-2">
-        {slots.map((slot) => {
-          const isSelected = selectedSlot?.startTimeUtc === slot.startTimeUtc;
+      {slots.length === 0 ? (
+        <p className="text-gray-500 italic">No available time slots.</p>
+      ) : (
+        <div className="flex flex-wrap gap-2">
+          {slots.map((slot) => {
+            const isSelected = selectedSlot?.startTimeUtc === slot.startTimeUtc;
 
-          return (
-            <SelectableCard
-              key={slot.startTimeUtc}
-              labelTop={slot.displayTime}
-              isSelected={isSelected}
-              onClick={() => onSelect(slot)}
-            />
-          );
-        })}
-      </div>
+            return (
+              <SelectableCard
+                key={slot.startTimeUtc}
+                labelTop={slot.displayTime}
+                isSelected={isSelected}
+                onClick={() => onSelect(slot)}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

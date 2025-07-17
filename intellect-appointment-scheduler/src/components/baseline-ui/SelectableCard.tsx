@@ -24,6 +24,7 @@ const SelectableCard: React.FC<SelectableCardProps> = ({
 
   return isDate ? (
     <button
+      data-testid={isDate ? `date-${labelTop}-${labelBottom}` : `slot-${labelTop}`}
       onClick={onClick}
       className={`${classes} px-4 py-4 min-w-[60px] flex flex-col items-center`}
     >
