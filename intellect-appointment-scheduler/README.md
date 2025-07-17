@@ -1,69 +1,77 @@
-# React + TypeScript + Vite
+# Intellect Q2 - Rakshit Pandey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🗓️ Appointment Scheduler Widget
 
-Currently, two official plugins are available:
+A responsive and modular React component for booking appointment slots, built using **React + TypeScript + Tailwind CSS + React Query**.  
+Users can select a date and choose from available time slots.  
+Designed as a self-contained UI widget with clean styling and robust unit test coverage using **React Testing Library and Vitest**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔗 [Live Demo on Vercel](https://your-vercel-demo-url.com)  
+_(Replace the above URL with the actual deployed link if available)_
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📦 Project Setup (Local)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Follow these steps to run the project locally:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/rakshitexe/Intellect-Assignment-Q2.git
+   cd intellect-appointment-scheduler
+2. **Install dependencies**
+    ```bash
+    npm install
+3. **Start the development server**
+    ```bash
+    npm run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Open in your browser:
+http://localhost:5173
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🧪 Running Tests
+The project uses Vitest and React Testing Library for unit testing.
+
+    npm test
+💡 All functional components are tested, focusing on rendering data and simulating user interactions.
+
+
+## ✅ Features
+📅 Selectable date and time slots
+
+⚛️ Built with React + TypeScript
+
+💅 Styled with Tailwind CSS
+
+📦 Powered by React Query for data fetching and caching
+
+🧪 Unit tested using React Testing Library + Vitest
+
+📱 Fully responsive design
+
+🔁 Easily extendable and reusable as a widget
+
+## 🧠 Technologies Used
+React
+
+TypeScript
+
+Tailwind CSS
+
+React Query
+
+Vitest + React Testing Library
+
+## 📝 License
+This project is licensed under the MIT License.
+
+## 🙋‍♂️ Contributing
+Feel free to fork the repository and submit pull requests. For major changes, please open an issue first.
+
+## 📬 Contact
+For questions or suggestions, reach out via GitHub or [rakshit.cse@gmail.com].
+
