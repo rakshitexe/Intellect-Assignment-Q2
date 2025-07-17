@@ -68,7 +68,7 @@ const DateSelector: React.FC<Props> = ({
 
   return (
     <div className="mb-3">
-      <h2 className="text-lg font-semibold text-gray-800 mb-2">Pick a date</h2>
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">Pick a date</h3>
 
       {/* If no dates are available, show a message */}
       {dates.length === 0 ? (
