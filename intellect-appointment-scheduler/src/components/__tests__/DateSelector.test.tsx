@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import DateSelector from "../baseline-ui/DateSelector";
 import { vi } from "vitest";
 
-// Mock data
+// Sample date strings to use for testing
 const mockDates = [
   "2025-07-16T00:00:00.000Z",
   "2025-07-17T00:00:00.000Z",
@@ -11,13 +11,16 @@ const mockDates = [
   "2025-07-20T00:00:00.000Z",
 ];
 
+// Mock function to track selected date callback
 const mockOnSelectDate = vi.fn();
 
 describe("DateSelector Component", () => {
+  // Reset mock before each test
   beforeEach(() => {
     mockOnSelectDate.mockClear();
   });
 
+  // Test if the component renders all given dates correctly
   test("renders correctly with given dates", () => {
     render(
       <DateSelector
@@ -29,6 +32,7 @@ describe("DateSelector Component", () => {
 
     expect(screen.getByText("Pick a date")).toBeInTheDocument();
 
+    // Check if each date is rendered with correct day and weekday
     mockDates.forEach((dateStr) => {
       const date = new Date(dateStr);
       const day = date.getDate().toString().padStart(2, "0");
@@ -39,6 +43,7 @@ describe("DateSelector Component", () => {
     });
   });
 
+  // Test if selecting a date calls the onSelectDate callback
   test("calls onSelectDate when a date card is clicked", () => {
     render(
       <DateSelector
@@ -57,6 +62,7 @@ describe("DateSelector Component", () => {
     expect(mockOnSelectDate).toHaveBeenCalledWith(mockDates[1]);
   });
 
+  // Check that left scroll button is disabled initially
   test("left scroll button is disabled initially", () => {
     render(
       <DateSelector
@@ -71,6 +77,7 @@ describe("DateSelector Component", () => {
     expect(leftButton).toBeDisabled();
   });
 
+  // Check that right scroll button exists
   test("right scroll button is visible", () => {
     render(
       <DateSelector
@@ -85,6 +92,7 @@ describe("DateSelector Component", () => {
     expect(rightButton).toBeInTheDocument();
   });
 
+  // Ensure selected date card has correct styling applied
   test("selected date card is highlighted", () => {
     render(
       <DateSelector
@@ -98,9 +106,10 @@ describe("DateSelector Component", () => {
     const day = selectedDate.getDate().toString().padStart(2, "0");
 
     const selectedCard = screen.getByText(day).parentElement;
-    expect(selectedCard?.className).toContain("border-gray-400"); // Assuming this is in `SelectableCard`
+    expect(selectedCard?.className).toContain("border-gray-400");
   });
 
+  // Ensure component handles empty date list gracefully
   test("does not crash when empty dates are provided", () => {
     render(
       <DateSelector
@@ -113,6 +122,7 @@ describe("DateSelector Component", () => {
     expect(screen.getByText("Pick a date")).toBeInTheDocument();
   });
 
+  // Ensure scroll buttons do not crash on click
   test("clicking scroll buttons does not throw error", () => {
     render(
       <DateSelector
@@ -130,15 +140,16 @@ describe("DateSelector Component", () => {
     fireEvent.click(rightButton);
   });
 
+  // Show appropriate message when no dates are available
   it('shows "No available dates" when dates array is empty', () => {
-  render(
-    <DateSelector
-      dates={[]}
-      selectedDate=""
-      onSelectDate={vi.fn()}
-    />
-  );
+    render(
+      <DateSelector
+        dates={[]}
+        selectedDate=""
+        onSelectDate={vi.fn()}
+      />
+    );
 
-  expect(screen.getByText(/no available dates/i)).toBeInTheDocument();
-});
+    expect(screen.getByText(/no available dates/i)).toBeInTheDocument();
+  });
 });
